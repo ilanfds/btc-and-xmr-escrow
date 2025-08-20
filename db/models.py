@@ -2,51 +2,12 @@ from datetime import datetime, timezone
 import uuid
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy import JSON, BigInteger, Boolean, CheckConstraint, DateTime, Enum, ForeignKey, Index, Integer, Text, UniqueConstraint, String
-import enum
+from domain.types import *
 
 from sqlalchemy.sql import expression
 
 class Base(DeclarativeBase):
     pass
-
-class Asset(str, enum.Enum): #Enum de strings
-    BTC="BTC"
-    XMR="XMR"
-
-class EscrowState(str, enum.Enum):
-    CREATED="CREATED"
-    FUNDED="FUNDED"
-    RELEASED="RELEASED"
-    DISPUTED="DISPUTED"
-    RESOLVED="RESOLVED"
-    CLOSED="CLOSED"
-
-class PayoutKind(str,enum.Enum):
-    NORMAL = "NORMAL"
-    DISPUTE="DISPUTE"
-
-class PayoutStatus(str,enum.Enum):
-    BROADCAST="BROADCAST"
-    CONFIRMED="CONFIRMED"
-    FAILED="FAILED"
-
-class Role(str,enum.Enum):
-    SELLER="SELLER"
-    BUYER="BUYER"
-    PLATFORM="PLATFORM"
-
-class SpeedProfile(str, enum.Enum):
-    fast = "fast"
-    normal = "normal"
-    slow = "slow"
-
-class DisputeStatus(str, enum.Enum):
-    OPEN = "OPEN"
-    CLOSED = "CLOSED"
-
-class DepositStatus(str, enum.Enum):
-    PENDING="PENDING"
-    CONFIRMED = "CONFIRMED"
 
 #Tabelas
 class Escrow(Base):
