@@ -1,4 +1,4 @@
-# CriptoEscrow
+# CriptoEscrow (DEPRECATED)
 
 Plataforma de **escrow off-chain** para **Bitcoin (BTC)** e **Monero (XMR)**.  
 O objetivo é permitir transações seguras entre comprador e vendedor, com fundos retidos até a confirmação de entrega ou resolução de disputa.
